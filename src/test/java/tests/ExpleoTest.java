@@ -14,23 +14,23 @@ import expleo.ExpleoEmployee;
 public class ExpleoTest {
 	
 	private static ExpleoEmployee manager;
-    private static EngineeringExpleoEmployee engineer;
+    private static EngineeringExpleoEmployee engineer1;
     private static EngineeringExpleoEmployee engineer2;
 	
 	@BeforeClass
     public static void setUp() {
         manager = new ExpleoEmployee("Riham", 12345);
-        engineer = manager.hire("Mofid");
+        engineer1 = manager.hire("Mofid");
         engineer2 = manager.hire("Ahmed");
     }
 
 	@Test
 	public void TestHire() {
 		List<EngineeringExpleoEmployee> employeesList = ExpleoEmployee.getEmployeesList();
-		System.out.println("TestHire: ");
+		System.out.println("Testing Hire is running ..........: ");
 		System.out.println(manager.displayEmployeeList());
 
-		Assert.assertTrue(employeesList.contains(engineer) && employeesList.contains(engineer2));
+		Assert.assertTrue(employeesList.contains(engineer1) && employeesList.contains(engineer2));
 	}
 
 	@Test
@@ -42,7 +42,7 @@ public class ExpleoTest {
 	@Test
 	public void TestResignOrFire() {
 		List<EngineeringExpleoEmployee> employeesList = ExpleoEmployee.getEmployeesList();
-		System.out.println("TestResignOrFire");
+		System.out.println("TestResignOrFire is running .......");
 		System.out.println("Number of employees before resign or fire is: " + employeesList.size());
 		System.out.println(manager.displayEmployeeList());
 
@@ -56,8 +56,8 @@ public class ExpleoTest {
 
 	@Test
 	public void TestAssign() {
-		engineer.assign(engineer, "Allianz.de");
-		Assert.assertEquals("Allianz.de", engineer.getProjectName());
+		engineer1.assign(engineer1, "Allianz.de");
+		Assert.assertEquals("Allianz.de", engineer1.getProjectName());
 		System.out.println(manager.displayEmployeeList());
 	}
 

@@ -31,7 +31,7 @@ public class ExpleoEmployee {
 	}
 
 	private int generateSapID() {
-		return employeesList.size() + 1000;
+		return employeesList.size() + 10000;
 	}
 
 	@Override
@@ -45,13 +45,19 @@ public class ExpleoEmployee {
 
 	public String displayEmployeeList() {
 		
-		if (employeesList == null) return "The List of employees is empty";
-	
-		String employees ="---> The List of employees contains: \n";
+		String employees = "";
 		
-		for (int i = 0; i < employeesList.size(); i++) {
-			employees += employeesList.get(i).toString();
+		if (employeesList == null) 
+			 employees ="The List of employees is empty";
+	
+		else {
+			 employees ="---> The List of employees contains: \n";
+			
+			for (int i = 0; i < employeesList.size(); i++) {
+				employees += employeesList.get(i).toString();
+			}
 		}
+		
 		return employees;
 	}
 
